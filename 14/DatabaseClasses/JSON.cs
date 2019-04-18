@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AirplaneClasses.Interfaces;
 using Newtonsoft.Json.Linq;
 
 namespace DatabaseClasses
@@ -180,6 +181,19 @@ namespace DatabaseClasses
 			var status = Airplanes.First(x => x.Id == id).Status;
 			if (status == 2 || status == 16) return 1;
 			return 0;
+		}
+
+		public int AddPassenger(string serialized, int id)
+		{
+			try
+			{
+				Airplanes.First(x => x.Id == id).Passengers.Add(JsonConvert.DeserializeObject<Passenger>(serialized));
+				return 1;
+			}
+			catch
+			{
+				return 0;
+			}
 		}
 	}
 }

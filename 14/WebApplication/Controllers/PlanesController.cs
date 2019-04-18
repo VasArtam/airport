@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AirplaneClasses;
+using AirplaneClasses.Interfaces;
 using DatabaseClasses;
 using Newtonsoft.Json;
 
@@ -99,6 +100,15 @@ namespace WebApplication.Controllers
 		public int IsFollowing(int id)
 		{
 			return Storage.IsFollowing(id);
+		}
+
+		[HttpPost]
+		[Route("add_passenger/{id}")]
+		public ActionResult AddPassenger([FromBody]Passenger passenger, int id)
+		{
+			var serialized = JsonConvert.SerializeObject(passenger);
+			var code = Storage.AddPassenger(serialized, id);
+			return code == 1 ? (ActionResult) Ok() : BadRequest();
 		}
 
 		/*[HttpGet]

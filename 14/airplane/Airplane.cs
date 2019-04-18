@@ -304,7 +304,7 @@ namespace AirplaneClasses
 			// Сообщение Ground Control, что полоса свободна
 			_ = GroundControlClient.FreeTheSpace(Id, _locationCode);
 
-			PassengerClient.NotifyPassengers(Route.reisNumber);
+			_ = PassengerClient.NotifyPassengers(Route.reisNumber);
 			AirplaneClient.Remove(Id);
 		}
 
