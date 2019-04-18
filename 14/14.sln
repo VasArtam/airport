@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseClasses", "DatabaseClasses\DatabaseClasses.csproj", "{070434A0-7118-479C-A3DD-5EB7E61249A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneClasses", "ConsoleApp1\AirplaneClasses.csproj", "{2A02C25D-EDB6-49B0-B362-18F498CD97AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{070434A0-7118-479C-A3DD-5EB7E61249A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{070434A0-7118-479C-A3DD-5EB7E61249A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{070434A0-7118-479C-A3DD-5EB7E61249A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A02C25D-EDB6-49B0-B362-18F498CD97AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A02C25D-EDB6-49B0-B362-18F498CD97AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A02C25D-EDB6-49B0-B362-18F498CD97AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A02C25D-EDB6-49B0-B362-18F498CD97AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
