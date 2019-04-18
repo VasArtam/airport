@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\airplane\AirplaneClasses.csproj" />
+    <ProjectReference Include="..\airplane\AirplaneClassesOld.csproj" />
     <ProjectReference Include="..\DatabaseClasses\DatabaseClasses.csproj" />
   </ItemGroup>
 

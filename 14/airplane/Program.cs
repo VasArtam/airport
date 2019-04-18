@@ -74,7 +74,7 @@ namespace airplane
 			var fuelMax = 0.0;
 			var defrosted = false;
 			var food = new List<IFood>();
-			var route = new StandardRoute();
+			var route = new Route();
 
 			while (creation)
 			{

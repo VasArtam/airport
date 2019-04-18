@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Net;
-using System.Net.Http;
 using System.Threading;
 using airplane;
 using AirplaneClasses.Interfaces;
@@ -33,10 +30,10 @@ namespace AirplaneClasses
 		 * 16 - Прикреплен к Follow Me в гараж.
 		 */
 		// Пассажиры
-		List<IPassenger> Passengers { get; set; }
+		List<Passenger> Passengers { get; set; }
 		int PassengersMax { get; set; }
 		// Багаж
-		List<IBaggage> Baggage { get; set; }
+		List<Baggage> Baggage { get; set; }
 		// Топливо
 		double Fuel { get; set; }
 		// Емкость топливного бака
@@ -44,22 +41,22 @@ namespace AirplaneClasses
 		// Обработан ли антиобледенителем
 		bool Defrosted { get; set; }
 		// Еда
-		List<IFood> Food { get; set; }
+		List<Food> Food { get; set; }
 		// Рейс, маршрут
-		StandardRoute Route { get; set; }
+		Route Route { get; set; }
 	}
 	public class Airplane : IPlane
 	{
 		public int Id { get; }
 		public int Status { get; set; }
-		public List<IPassenger> Passengers { get; set; }
+		public List<Passenger> Passengers { get; set; }
 		public int PassengersMax { get; set; }
-		public StandardRoute Route { get; set; }
-		public List<IBaggage> Baggage { get; set; }
+		public Route Route { get; set; }
+		public List<Baggage> Baggage { get; set; }
 		public double Fuel { get; set; }
 		public double FuelMax { get; set; }
 		public bool Defrosted { get; set; }
-		public List<IFood> Food { get; set; }
+		public List<Food> Food { get; set; }
 		public bool NeedsMaintenance { get; set; }
 
 		private static readonly Fsm fsm = new Fsm();
@@ -86,7 +83,7 @@ namespace AirplaneClasses
 		}
 
 		[JsonConstructor]
-		public Airplane(int iD, int status, List<IPassenger> passengers, int passengersMax, StandardRoute route, List<IBaggage> baggage, double fuel, double fuelMax, bool defrosted, List<IFood> food) : this(iD)
+		public Airplane(int iD, int status, List<Passenger> passengers, int passengersMax, Route route, List<Baggage> baggage, double fuel, double fuelMax, bool defrosted, List<Food> food) : this(iD)
 		{
 			Id = iD;
 
@@ -254,7 +251,7 @@ namespace AirplaneClasses
 			{
 				// Запрос на разрешение передвижения
 
-				var response = GroundControlClient.PermissionOnFlight(Id);
+				var response = GroundControlClient.PermissionOnFlight("", "", Id);
 				response.Wait();
 				var content = response.Result.Content.ReadAsStringAsync();
 				content.Wait();
@@ -301,6 +298,7 @@ namespace AirplaneClasses
 			fsm.Update();
 		}
 
+		// Status 8
 		private void Flight()
 		{
 			// Сообщение Ground Control, что полоса свободна
@@ -310,7 +308,7 @@ namespace AirplaneClasses
 			AirplaneClient.Remove(Id);
 		}
 
-		private void GetPassengers(List<IPassenger> Passengers)
+		/*private void GetPassengers(List<Passenger> Passengers)
 		{
 
 		}
@@ -322,7 +320,7 @@ namespace AirplaneClasses
 		}
 
 		// Метод получения багажа
-		private void GetBaggage(List<IBaggage> Baggage)
+		private void GetBaggage(List<Baggage> Baggage)
 		{
 
 		}
@@ -358,12 +356,12 @@ namespace AirplaneClasses
 		}
 
 		// Метод получения еды
-		private void GetFood(IFood Food)
+		private void GetFood(Food Food)
 		{
 
 		}
 		// Метод получения еды
-		private void GetFood(List<IFood> Food)
+		private void GetFood(List<Food> Food)
 		{
 
 		}
@@ -384,7 +382,7 @@ namespace AirplaneClasses
 		private void GetSchedule(DateTime departure, DateTime arrival)
 		{
 
-		}
+		}*/
 
 		public Airplane Clone()
 		{
