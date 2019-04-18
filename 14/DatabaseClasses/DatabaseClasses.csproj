@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\airplane\AirplaneClassesOld.csproj" />
+    <ProjectReference Include="..\ConsoleApp1\AirplaneClasses.csproj" />
   </ItemGroup>
 
 </Project>

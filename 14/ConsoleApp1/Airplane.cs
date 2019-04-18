@@ -73,7 +73,7 @@ namespace AirplaneClasses
 		private static readonly ScheduleHttpClient ScheduleClient = new ScheduleHttpClient();
 
 		private readonly Random _r = new Random();
-		private const int WaitingTime = 1000;
+		private const int WaitingTime = 3000;
 
 		public Airplane() { }
 		public Airplane(int id)

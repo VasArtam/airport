@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using airplane;
-using AirplaneClasses.Interfaces;
 using Newtonsoft.Json;
 
-namespace AirplaneClasses
+namespace airplane
 {
 	public interface IPlane
 	{

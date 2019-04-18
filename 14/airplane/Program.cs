@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using AirplaneClasses;
-using AirplaneClasses.Interfaces;
 using Newtonsoft.Json;
 
 namespace airplane

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace AirplaneClasses.Interfaces
+namespace airplane
 {
 	public class Passenger
 	{
